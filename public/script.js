@@ -172,3 +172,4 @@ window.addEventListener('scroll', () => {
         nav.style.background = 'var(--bg-primary)';
     }
 });
+
