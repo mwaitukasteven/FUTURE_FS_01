@@ -531,3 +531,141 @@ section {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* Experience Cards Style */
+.experience-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.exp-card {
+    display: flex;
+    gap: 1.5rem;
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.exp-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--accent);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+
+.exp-card:hover::before {
+    transform: scaleY(1);
+}
+
+.exp-card:hover {
+    transform: translateX(10px);
+}
+
+.exp-icon {
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    background: var(--accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.exp-content {
+    flex: 1;
+}
+
+.exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.exp-header h3 {
+    font-size: 1.3rem;
+    color: var(--text-primary);
+}
+
+.exp-date {
+    background: var(--accent);
+    color: white;
+    padding: 0.3rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.exp-content h4 {
+    color: var(--accent);
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.exp-content h4 i {
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+}
+
+.exp-content p {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.exp-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.exp-tech span {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    transition: all 0.3s;
+}
+
+.exp-tech span:hover {
+    background: var(--accent);
+    color: white;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .exp-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .exp-icon {
+        margin: 0 auto;
+    }
+    
+    .exp-header {
+        flex-direction: column;
+    }
+    
+    .exp-tech {
+        justify-content: center;
+    }
+}
